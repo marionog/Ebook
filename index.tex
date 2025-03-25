@@ -1,0 +1,638 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Introdução à análise espacial em saúde no R},
+  pdfauthor={Mário Círio Nogueira},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Introdução à análise espacial em saúde no R}
+\author{Mário Círio Nogueira}
+\date{Invalid Date}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\chapter{Introdução à análise espacial em saúde no
+R}\label{introduuxe7uxe3o-uxe0-anuxe1lise-espacial-em-sauxfade-no-r}
+
+\bookmarksetup{startatroot}
+
+\chapter{Introdução}\label{introduuxe7uxe3o}
+
+Bem-vindo ao meu ebook. Este é um livro criado com o \texttt{R} e
+\textbf{Quarto}.
+
+\bookmarksetup{startatroot}
+
+\chapter{Epidemiologia}\label{epidemiologia}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+A \textbf{Epidemiologia} é o estudo da distribuição das doenças e
+problemas de saúde em populações humanas (epidemiologia descritiva) e
+das causas desta distribuição (epidemiologia analítica). A distribuição
+das doenças pode ser analisada nas dimensões temporal, espacial e
+pessoal. Em relação à dimensão temporal, queremos saber se a frequência
+de determinada doença está diminuindo, estável ou aumentando com o
+passar do tempo. Os estudos utilizam dados agregados e são chamados
+estudos de tendência/série temporal. Podemos também estar interessados
+em variações sazonais (estações do ano ou dias da semana) ou em
+variações diárias, que acompanham variações em outros indicadores, por
+exemplo climáticos. Quanto à dimensão pessoal, procuramos identificar
+características dos indivíduos associadas à maior frequência da doença.
+Neste caso estão os estudos com dados individualizados: inquéritos,
+coortes, caso-controle e ensaios clínicos. Por fim, de maior interesse
+para este livro, está a investigação da distribuição espacial das
+doenças. Os estudos utilizam dados agregados por recortes geográficos
+das populações (setores censitários, bairros, municípios, regiões,
+estados, países). Estes estudos são chamados de ecológicos, agregados ou
+de análise espacial em saúde.
+
+\bookmarksetup{startatroot}
+
+\chapter{R: linguagem e programa}\label{r-linguagem-e-programa}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+O R é um programa estatístico de domínio público criado em 1995 a partir
+da linguagem S. Ele roda em Windows, Mac ou Linux e sua versão mais
+recente pode ser baixada gratuitamente do
+\href{https://cran.r-project.org/}{CRAN - Comprehensive R Archive
+Network}. As suas funções estatísticas são ativadas pela digitação de
+comandos; estes podem ser arquivados em arquivos textos chamados
+scripts, facilitando muito seu uso.\\
+O RStudio é uma plataforma integrada de trabalho que torna mais fácil a
+manipulação do R e também pode ser baixada gratuitamente da internet
+(\href{https://rstudio.com/}{R Studio}). Tem que instalar primeiro o R e
+depois o RStudio.\\
+O \href{http://www.r-project.org/}{Projeto R} é uma colaboração
+internacional de pesquisadores de diversas áreas, como estatística,
+ciências da computação, epidemiologia, geografia, etc, que desenvolvem
+novos conjuntos de funções no R, chamados pacotes ou bibliotecas, e que
+também podem ser baixados gratuitamente da internet. Diversos manuais e
+tutoriais estão disponíveis na internet, alguns acessados a partir do
+\href{https://cran.r-project.org/}{CRAN}.
+
+\bookmarksetup{startatroot}
+
+\chapter{Objetos no R}\label{objetos-no-r}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+O R tem 5 classes básicas (atômicas) de objetos:\\
+- character (exemplo: ``a'')\\
+- numeric: (exemplo: 3.5)\\
+- integer: (exemplo: 3)\\
+- logical: (exemplo: TRUE)\\
+- complex: (exemplo: (1 + 3i))\\
+A função class() informa qual a classe do objeto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \StringTok{"a"}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FloatTok{3.5}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{3}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{as.integer}\NormalTok{(x)}
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "logical"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+} \DecValTok{3}\NormalTok{i)  }
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "complex"
+\end{verbatim}
+
+Outros objetos armazenam os objetos atômicos:\\
+* Vetor: sequência de objetos atômicos de mesma classe (ex.:
+c(1,2,3)).\\
+* Fator: vetor de inteiros com rótulos/levels.\\
+* Matriz: vetor com duas dimensões (linhas e colunas); os objetos
+atômicos também são todos da mesma classe.\\
+* Lista: conjunto de vetores, matrizes e/ou dataframes; seus elementos
+não precisam ter o mesmo comprimento; geralmente os resultados das
+funções são armazenados em listas.\\
+* Dataframe: lista especial na qual todos os elementos têm o mesmo
+comprimento; os elementos podem ser de tipos básicos diferentes;
+geralmente os bancos de dados são armazenados como dataframes, nos quais
+os registros são as linhas e as variáveis são as colunas.\\
+* Função: conjunto de comandos que vão executar ordens específicas.
+Muitas funções já vêm nos pacotes básicos do R (instalados juntamente
+com o programa), várias outras são ativadas quando habilitamos
+pacotes/bibliotecas do R específicas, e também podemos criar as funções
+que precisarmos.
+
+Quando temos dúvidas sobre alguma função do R, temos várias opções de
+ajuda:\\
+* Documentação do R: help(``nome\_da\_função'') ou ?nome\_da\_função.\\
+* Digitar no Google: ``r project função''.\\
+* Digitar no \href{https://stackoverflow.com/}{stackoverflow}: ``r
+project função''.
+
+Podemos também pesquisar pelos pacotes do R no
+\href{https://cran.r-project.org/}{CRAN}, no Google ou no
+\href{https://stackoverflow.com/}{stackoverflow}.
+
+Para instalar um pacote no R (apenas na primeira vez que for usar)
+usa-se a seguinte função: install.packages(``nome do pacote''). Para
+ativar o pacote a cada sessão do R: library(``nome do pacote''). Para
+saber quais pacotes estão ativados no momento: (.packages()).
+
+\bookmarksetup{startatroot}
+
+\chapter{Dataframe}\label{dataframe}
+
+É um objeto muito importante do R porque geralmente nossos bancos de
+dados são armazenados como dataframes. São semelhantes a planilhas, em
+que as linhas correspondem a registros/observações e as colunas a
+variáveis.\\
+Algumas funções úteis para lidar com os dataframes:\\
+* dim() - Número de linhas (registros) e de colunas (variáveis)\\
+* head() - Mostra as primeiras 6 linhas\\
+* tail() - Mostra as últimas 6 linhas\\
+* names() - Os nomes das colunas\\
+* str() - Estrutura do data.frame. Mostra, entre outras coisas, as
+classes de cada coluna\\
+* cbind() - Acopla duas tabelas lado a lado\\
+* rbind() - Empilha duas tabelas
+
+\bookmarksetup{startatroot}
+
+\chapter{Objetos no R}\label{objetos-no-r-1}
+
+O R tem 5 classes básicas (atômicas) de objetos:\\
+- character (exemplo: ``a'')\\
+- numeric: (exemplo: 3.5)\\
+- integer: (exemplo: 3)\\
+- logical: (exemplo: TRUE)\\
+- complex: (exemplo: (1 + 3i))\\
+A função class() informa qual a classe do objeto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \StringTok{"a"}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FloatTok{3.5}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{3}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{as.integer}\NormalTok{(x)}
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}  
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "logical"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+} \DecValTok{3}\NormalTok{i)  }
+\FunctionTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "complex"
+\end{verbatim}
+
+Outros objetos armazenam os objetos atômicos:\\
+* Vetor: sequência de objetos atômicos de mesma classe (ex.:
+c(1,2,3)).\\
+* Fator: vetor de inteiros com rótulos/levels.\\
+* Matriz: vetor com duas dimensões (linhas e colunas); os objetos
+atômicos também são todos da mesma classe.\\
+* Lista: conjunto de vetores, matrizes e/ou dataframes; seus elementos
+não precisam ter o mesmo comprimento; geralmente os resultados das
+funções são armazenados em listas.\\
+* Dataframe: lista especial na qual todos os elementos têm o mesmo
+comprimento; os elementos podem ser de tipos básicos diferentes;
+geralmente os bancos de dados são armazenados como dataframes, nos quais
+os registros são as linhas e as variáveis são as colunas.\\
+* Função: conjunto de comandos que vão executar ordens específicas.
+Muitas funções já vêm nos pacotes básicos do R (instalados juntamente
+com o programa), várias outras são ativadas quando habilitamos
+pacotes/bibliotecas do R específicas, e também podemos criar as funções
+que precisarmos.
+
+Quando temos dúvidas sobre alguma função do R, temos várias opções de
+ajuda:\\
+* Documentação do R: help(``nome\_da\_função'') ou ?nome\_da\_função.\\
+* Digitar no Google: ``r project função''.\\
+* Digitar no \href{https://stackoverflow.com/}{stackoverflow}: ``r
+project função''.
+
+Podemos também pesquisar pelos pacotes do R no
+\href{https://cran.r-project.org/}{CRAN}, no Google ou no
+\href{https://stackoverflow.com/}{stackoverflow}.
+
+Para instalar um pacote no R (apenas na primeira vez que for usar)
+usa-se a seguinte função: install.packages(``nome do pacote''). Para
+ativar o pacote a cada sessão do R: library(``nome do pacote''). Para
+saber quais pacotes estão ativados no momento: (.packages()).
+
+\bookmarksetup{startatroot}
+
+\chapter{Dataframe}\label{dataframe-1}
+
+É um objeto muito importante do R porque geralmente nossos bancos de
+dados são armazenados como dataframes. São semelhantes a planilhas, em
+que as linhas correspondem a registros/observações e as colunas a
+variáveis.\\
+Algumas funções úteis para lidar com os dataframes:\\
+* dim() - Número de linhas (registros) e de colunas (variáveis)\\
+* head() - Mostra as primeiras 6 linhas\\
+* tail() - Mostra as últimas 6 linhas\\
+* names() - Os nomes das colunas\\
+* str() - Estrutura do data.frame. Mostra, entre outras coisas, as
+classes de cada coluna\\
+* cbind() - Acopla duas tabelas lado a lado\\
+* rbind() - Empilha duas tabelas
+
+\bookmarksetup{startatroot}
+
+\chapter{Operações simples}\label{operauxe7uxf5es-simples}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Podemos executar no R desde as operações matemáticas mais simples até os
+modelos estatísticos mais complexos. Divisão e multiplicação são
+calculadas antes da adição e subtração, e podemos usar parênteses para
+especificar a ordem em que as operações devem ser feitas. Os códigos
+para as operações matemáticas simples são:\\
+* Adição: +\\
+* Subtração: -\\
+* Multiplicação: *\\
+* Divisão: /\\
+* Potência: \^{}\\
+* Raiz quadrada: sqrt()
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{+}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3{-}1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3}\SpecialCharTok{*}\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{4}\SpecialCharTok{/}\DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3}\SpecialCharTok{\^{}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter{Entrada de dados no R}\label{entrada-de-dados-no-r}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+A forma mais prática de leitura de bancos de dados no R é no formato de
+arquivos texto (csv: comma separeted values). É importante saber o que
+está sendo usado para separar as colunas (``,'' ou ``;'' ou ``/'') e
+qual o separador de decimais (``.'' ou ``,''). Se temos um banco de
+dados no formato de planilha, podemos exportar o arquivo como csv para a
+importação pelo R.
+
+\section{Usando o pacote base}\label{usando-o-pacote-base}
+
+A função mais flexível é read.table, em que podemos especificar as
+características acima. Exemplo (lendo o arquivo e salvando como um
+objeto dataframe no R):\\
+* df \textless- read.table(``nomedoarquivo.csv'', header=T, sep=``;'',
+dec=``.'')
+
+\section{Usando o tidyverse}\label{usando-o-tidyverse}
+
+O tidyverse tem um pacote para leitura e importação de bancos de dados.
+
+
+
+\end{document}

@@ -1,0 +1,7 @@
+---
+
+---
+
+# Epidemiologia
+
+A **Epidemiologia** é o estudo da distribuição das doenças e problemas de saúde em populações humanas (epidemiologia descritiva) e das causas desta distribuição (epidemiologia analítica). A distribuição das doenças pode ser analisada nas dimensões temporal, espacial e pessoal. Em relação à dimensão temporal, queremos saber se a frequência de determinada doença está diminuindo, estável ou aumentando com o passar do tempo. Os estudos utilizam dados agregados e são chamados estudos de tendência/série temporal. Podemos também estar interessados em variações sazonais (estações do ano ou dias da semana) ou em variações diárias, que acompanham variações em outros indicadores, por exemplo climáticos. Quanto à dimensão pessoal, procuramos identificar características dos indivíduos associadas à maior frequência da doença. Neste caso estão os estudos com dados individualizados: inquéritos, coortes, caso-controle e ensaios clínicos. Por fim, de maior interesse para este livro, está a investigação da distribuição espacial das doenças. Os estudos utilizam dados agregados por recortes geográficos das populações (setores censitários, bairros, municípios, regiões, estados, países). Estes estudos são chamados de ecológicos, agregados ou de análise espacial em saúde.

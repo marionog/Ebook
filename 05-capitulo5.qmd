@@ -1,0 +1,16 @@
+---
+
+---
+
+# Entrada de dados no R
+
+A forma mais prática de leitura de bancos de dados no R é no formato de arquivos texto (csv: comma separeted values). É importante saber o que está sendo usado para separar as colunas ("," ou ";" ou "/") e qual o separador de decimais ("." ou ","). Se temos um banco de dados no formato de planilha, podemos exportar o arquivo como csv para a importação pelo R.
+
+## Usando o pacote base
+
+A função mais flexível é read.table, em que podemos especificar as características acima. Exemplo (lendo o arquivo e salvando como um objeto dataframe no R):\
+\* df \<- read.table("nomedoarquivo.csv", header=T, sep=";", dec=".")
+
+## Usando o tidyverse
+
+O tidyverse tem um pacote para leitura e importação de bancos de dados.

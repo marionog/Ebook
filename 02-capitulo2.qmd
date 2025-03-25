@@ -1,0 +1,9 @@
+---
+
+---
+
+# R: linguagem e programa
+
+O R é um programa estatístico de domínio público criado em 1995 a partir da linguagem S. Ele roda em Windows, Mac ou Linux e sua versão mais recente pode ser baixada gratuitamente do [CRAN - Comprehensive R Archive Network](https://cran.r-project.org/). As suas funções estatísticas são ativadas pela digitação de comandos; estes podem ser arquivados em arquivos textos chamados scripts, facilitando muito seu uso.\
+O RStudio é uma plataforma integrada de trabalho que torna mais fácil a manipulação do R e também pode ser baixada gratuitamente da internet ([R Studio](https://rstudio.com/)). Tem que instalar primeiro o R e depois o RStudio.\
+O [Projeto R](http://www.r-project.org/) é uma colaboração internacional de pesquisadores de diversas áreas, como estatística, ciências da computação, epidemiologia, geografia, etc, que desenvolvem novos conjuntos de funções no R, chamados pacotes ou bibliotecas, e que também podem ser baixados gratuitamente da internet. Diversos manuais e tutoriais estão disponíveis na internet, alguns acessados a partir do [CRAN](https://cran.r-project.org/).

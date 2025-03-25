@@ -1,0 +1,21 @@
+{
+  "hash": "836eacfb50cc98458acd176bc0b7d15d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\n\n---\n\n\n\n\n# Operações simples\n\nPodemos executar no R desde as operações matemáticas mais simples até os modelos estatísticos mais complexos. Divisão e multiplicação são calculadas antes da adição e subtração, e podemos usar parênteses para especificar a ordem em que as operações devem ser feitas. Os códigos para as operações matemáticas simples são:\\\n\\* Adição: +\\\n\\* Subtração: -\\\n\\* Multiplicação: \\*\\\n\\* Divisão: /\\\n\\* Potência: \\^\\\n\\* Raiz quadrada: sqrt()\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n2+2\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 4\n```\n\n\n:::\n\n```{.r .cell-code}\n3-1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n\n```{.r .cell-code}\n3*3\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 9\n```\n\n\n:::\n\n```{.r .cell-code}\n4/4\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 1\n```\n\n\n:::\n\n```{.r .cell-code}\n3^2\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 9\n```\n\n\n:::\n\n```{.r .cell-code}\nsqrt(9)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 3\n```\n\n\n:::\n:::\n",
+    "supporting": [
+      "04-capitulo4_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

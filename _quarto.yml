@@ -1,0 +1,21 @@
+project:
+  type: book
+
+book:
+  title: "Introdução à análise espacial em saúde no R"
+  author: "Mário Círio Nogueira"
+  date: "`r Sys.Date()`"
+  chapters:
+    - index.qmd
+    - 01-capitulo1.qmd
+    - 02-capitulo2.qmd
+    - 03-capitulo3.qmd
+    - 04-capitulo4.qmd
+    - 05-capitulo5.qmd
+format:
+  html:
+    toc: true         # Ativa o sumário
+    toc-depth: 2      # Nível do sumário
+    theme: cosmo      # Escolhe um tema (bootstrap ou customizado)
+  pdf: default
+  epub: default

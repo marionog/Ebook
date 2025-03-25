@@ -1,0 +1,16 @@
+---
+title: "Introdução à análise espacial em saúde no R"
+author: "Mário Círio Nogueira"
+date: "`r Sys.Date()`"
+format:
+  html: 
+    toc: true         # Gera um sumário
+    toc-depth: 2      # Nível do sumário
+    theme: cosmo      # Escolhe um tema (bootstrap ou customizado)
+  pdf: default
+  epub: default
+---
+
+# Introdução
+
+Bem-vindo ao meu ebook. Este é um livro criado com o `R` e **Quarto**.
